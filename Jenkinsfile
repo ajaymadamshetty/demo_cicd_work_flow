@@ -64,8 +64,8 @@ pipeline{
                         // Authenticate Docker to Google Cloud Artifact Registry
                         sh 'gcloud auth configure-docker asia-south1-docker.pkg.dev'
                         sh 'docker images'
-                        sh 'docker tag pythondemoimage us-central1-a-docker.pkg.dev/ajayjenkins/anil-cicd-demo-dev-repo/pythondemoimage:latest'
-                        sh 'docker push us-central1-a-docker.pkg.dev/ajayjenkins/anil-cicd-demo-dev-repo/pythondemoimage:latest'
+                        sh 'docker tag pythondemoimage asia-south1-docker.pkg.dev/excellent-guide-410011/anil-cicd-demo-dev-repo/pythondemoimage:latest'
+                        sh 'docker push asia-south1-docker.pkg.dev/excellent-guide-410011/anil-cicd-demo-dev-repo/pythondemoimage:latest'
                         }
                     } else if(env.BRANCH_NAME == 'test'){
                         dir("ops/src/uat"){
@@ -92,7 +92,7 @@ pipeline{
             }
             steps{
                 sh 'gcloud auth activate-service-account --key-file=$GOOGLE_APPLICATION_CREDENTIALS'
-                sh 'gcloud config set project ajayjenkins'
+                sh 'gcloud config set project excellent-guide-410011'
                     script{
                         sh 'echo running non prod terraform scripts'
                         if(env.BRANCH_NAME == 'develop'){
@@ -121,7 +121,7 @@ pipeline{
             }
             steps{
                 sh 'gcloud auth activate-service-account --key-file=$GOOGLE_APPLICATION_CREDENTIALS'
-                sh 'gcloud config set project ajayjenkins'
+                sh 'gcloud config set project excellent-guide-410011'
                 
                     script{
                         sh 'echo running prod terraform scripts'
@@ -137,10 +137,10 @@ pipeline{
                                 sh 'docker --version'
                                 sh 'docker images'
                                 sh 'docker build -t pythondemoimage'
-                                sh 'gcloud auth configure-docker us-central1-a-docker.pkg.dev'
+                                sh 'gcloud auth configure-docker asia-south1-docker.pkg.dev'
                                 sh 'docker images'
-                                sh 'docker tag pythondemoimage us-central1-a-docker.pkg.dev/ajayjenkins/anil-cicd-demo-prod-repo/pythondemoimage:latest'
-                                sh 'docker push us-central1-a-docker.pkg.dev/ajayjenkins/anil-cicd-demo-prod-repo/pythondemoimage:latest'
+                                sh 'docker tag pythondemoimage asia-south1-docker.pkg.dev/excellent-guide-410011/anil-cicd-demo-prod-repo/pythondemoimage:latest'
+                                sh 'docker push asia-south1-docker.pkg.dev/excellent-guide-410011/anil-cicd-demo-prod-repo/pythondemoimage:latest'
                             }
                             dir("ops/CloudRunService/prod"){
                                 sh 'terraform --version'
