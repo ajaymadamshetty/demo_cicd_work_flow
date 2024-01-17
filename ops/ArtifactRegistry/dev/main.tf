@@ -15,7 +15,7 @@ terraform {
   }
 }
 provider "google" {
-  project = "	ajayjenkins"
+  project = "ajayjenkins"
 }
 resource "google_artifact_registry_repository" "my-repo" {
   location      = var.location
