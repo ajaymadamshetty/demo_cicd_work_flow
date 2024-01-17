@@ -2,7 +2,7 @@ pipeline{
     agent any
 
     environment {
-        GOOGLE_APPLICATION_CREDENTIALS = credentials('anilgcpcredentials')
+        GOOGLE_APPLICATION_CREDENTIALS = credentials('ajaypipelineaccount')
     }
 
 
