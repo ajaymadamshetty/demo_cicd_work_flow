@@ -16,7 +16,7 @@ pipeline{
             }
             steps{
                 sh 'gcloud auth activate-service-account --key-file=$GOOGLE_APPLICATION_CREDENTIALS'
-                sh 'gcloud config set project excellent-guide-410011'
+                sh 'gcloud config set project ajayjenkins'
                     script{
                         sh 'echo running non prod terraform scripts'
                         if(env.BRANCH_NAME == 'develop'){
