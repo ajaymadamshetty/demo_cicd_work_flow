@@ -1,6 +1,6 @@
 variable "location" {
   type    = string
-  default = "asia-south1"
+  default = "us-central1"
 }
 
 variable "repository_id" {
