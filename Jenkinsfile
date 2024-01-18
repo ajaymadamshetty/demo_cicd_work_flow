@@ -48,7 +48,7 @@ pipeline{
             }
             steps{
                 sh 'gcloud auth activate-service-account --key-file=$GOOGLE_APPLICATION_CREDENTIALS'
-                sh 'gcloud config set project excellent-guide-410011'
+                sh 'gcloud config set project ajayjenkins'
                 // Add Jenkins user to the docker group
                 // sh 'sudo usermod -aG docker jenkins'
                 // Restart Jenkins to apply group changes
