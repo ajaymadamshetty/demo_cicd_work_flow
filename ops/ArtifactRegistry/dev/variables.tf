@@ -5,7 +5,7 @@ variable "location" {
 
 variable "repository_id" {
   type    = string
-  default = "anil-cicd-demo-dev-repo"
+  default = "ajay-pipeline"
 }
 
 variable "format" {
