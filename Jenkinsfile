@@ -73,10 +73,10 @@ pipeline{
                         sh 'docker --version'
                         sh 'docker images'
                         sh 'docker build -t pythondemoimage'
-                        sh 'gcloud auth configure-docker us-central1-a-docker.pkg.dev'
+                        sh 'gcloud auth configure-docker us-central1-docker.pkg.dev'
                         sh 'docker images'
-                        sh 'docker tag pythondemoimage us-central1-a-docker.pkg.dev/ajayjenkins/anil-cicd-demo-uat-repo/pythondemoimage:latest'
-                        sh 'docker push us-central1-a-docker.pkg.dev/ajayjenkins/anil-cicd-demo-uat-repo/pythondemoimage:latest'
+                        sh 'docker tag pythondemoimage us-central1-docker.pkg.dev/ajayjenkins/anil-cicd-demo-uat-repo/pythondemoimage:latest'
+                        sh 'docker push us-central1-docker.pkg.dev/ajayjenkins/anil-cicd-demo-uat-repo/pythondemoimage:latest'
                         }
                     }
                 
