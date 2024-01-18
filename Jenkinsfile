@@ -64,8 +64,8 @@ pipeline{
                         // Authenticate Docker to Google Cloud Artifact Registry
                         sh 'gcloud auth configure-docker us-central1-a-docker.pkg.dev'
                         sh 'docker images'
-                        sh 'docker tag pythondemoimage us-central1-a-docker.pkg.dev/excellent-guide-410011/anil-cicd-demo-dev-repo/pythondemoimage:latest'
-                        sh 'docker push us-central1-a-docker.pkg.dev/excellent-guide-410011/anil-cicd-demo-dev-repo/pythondemoimage:latest'
+                        sh 'docker tag pythondemoimage us-central1-a-docker.pkg.dev/excellent-guide-410011/ajay-pipeline/pythondemoimage:latest'
+                        sh 'docker push us-central1-a-docker.pkg.dev/excellent-guide-410011/ajay-pipeline/pythondemoimage:latest'
                         }
                     } else if(env.BRANCH_NAME == 'test'){
                         dir("ops/src/uat"){
